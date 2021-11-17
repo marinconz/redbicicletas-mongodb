@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+  redbici:
+    image: "node:12"
+    build: .
+    container_name: "redbici"
+    environment:
+      NODE_ENV: development
+      NODE_PATH: /
+    ports:
+      - "3000:3000"
+    links:
+      - redbicimg
+    depends_on:
+      - redbicimg
+  redbicimg:
+    image: mongo
+    restart: always
+    container_name: redbicimg
+    volumes:
+      - ~/mongo:/data/db
+    ports:
+      - "27017:27017"

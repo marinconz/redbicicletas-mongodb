@@ -1,0 +1,5 @@
+{
+    "dburl":"mongodb://redbicimg:27017/",
+    "dbcollection":"redbicimg",
+    "collection":"bicicletas"
+}
